@@ -8,6 +8,12 @@ public class Selection {
         Integer [] num = {12, 13, 14, 1, 5, 6, 7, 8, 9, 10};
         sort(num);
         System.out.println(Arrays.toString(num));
+
+
+        int x,y;
+        x=5>>2;
+        y=x>>2;
+        System.out.println(y);
     }
 
     /**
