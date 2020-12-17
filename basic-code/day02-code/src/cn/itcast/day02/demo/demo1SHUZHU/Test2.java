@@ -13,19 +13,21 @@ public class Test2 {
         System.out.print("请输入共有多少人：");
         int n = s.nextInt();
         s.close();
-        System.out.println("最后留下来的是原来的"+game(n)+"号");
+        System.out.println("最后留下来的是原来的" + game(n) + "号");
 
     }
+
     public static int game(int n) {
-                 int counter=3;
-                  List<Integer> list = new ArrayList<>();
-                     for (int i = 1; i <=n ; i++) list.add(i);
-                     int index = -1;
-                     while (list.size() > 1) {
-                             index = (index + counter) % list.size();
-                             list.remove(index--);
-                         }
-                     return list.get(0);
-                 }
+        int counter = 3;
+        List<Integer> list = new ArrayList<>();
+        for (int i = 1; i <= n; i++)
+            list.add(i);
+        int index = -1;
+        while (list.size() > 1) {
+            index = (index + counter) % list.size();
+            list.remove(index--);
+        }
+        return list.get(0);
+    }
 
 }
