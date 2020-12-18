@@ -1,4 +1,4 @@
-package cn.itcast.day02.demo.demo1SHUZHU;
+package cn.itcast.day02.SuanFan;
 
 import java.util.Arrays;
 

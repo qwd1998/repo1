@@ -1,34 +1,41 @@
-package cn.itcast.day02.demo.demo1SHUZHU;
+package cn.itcast.day02.SuanFan;
 
 import java.util.Arrays;
 
-public class Bubble {
-
+public class Insertion {
     public static void main(String[] args) {
         Integer [] num = {12, 13, 14, 1, 5, 6, 7, 8, 9, 10};
         sort(num);
         System.out.println(Arrays.toString(num));
+
     }
 
     /**
-     * 冒泡排序的方式
-     * 时间复杂度为O(n^2)
-     *
+     * 插入排序方式
      * @param arr
      */
-    public static void sort(Comparable [] arr) {
-        for (int i = 0; i < arr.length-1; i++) {
-            for (int j = i+1; j < arr.length; j++) {
-                if (greater(arr[i],arr[j])){
-                    exch(arr,i,j);
+    public static void sort(Comparable[] arr) {
+        for (int i = 1; i < arr.length ; i++) {
+            //拿当前的arr[i]与前排序好的顺序倒序比较，直到找到一个小于等于arr[i]的值，交换位置
+            for (int j = i; j >0 ; j--) {
+                //循环比较j和j-1的值，
+                // 比如j=5，则j-1=4，arr[4]>arr[5],交换位置，此时j=4,j-1=3
+                if (greater(arr[j-1], arr[j])) {
+                    //交换最小元素
+                    exch(arr, j-1, i);
+                }else{
+                    break;
                 }
             }
+
+
         }
 
     }
 
     /**
      * 判断v是否大于w
+     *
      * @param v
      * @param w
      * @return
@@ -39,6 +46,7 @@ public class Bubble {
 
     /**
      * 交换i索引和j索引的值
+     *
      * @param arr
      * @param i
      * @param j
