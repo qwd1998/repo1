@@ -71,6 +71,7 @@ public class Merge {
         sort(arr, lo, mi);
         sort(arr, mi + 1, hi);
 
+
         //4.对这两组的数据进行归并
         merge(arr, lo, mi, hi);
     }
